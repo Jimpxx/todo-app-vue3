@@ -7,24 +7,29 @@
         <label for="todo">Todo</label>
       </div>
     </form>
-    <div v-if="todos" class="">
-      <ul class="collection">
-        <li
-          :class="{ done: todo.done }"
-          class="collection-item"
-          v-for="(todo, index) in todos"
-          :key="todo.id"
-        >
-          <div>
-            <span @click="toggleDone(index)">{{ todo.content }}</span>
-
+    <ul v-if="todos.length" class="collection">
+      <li
+        :class="{ done: todo.done }"
+        class="collection-item"
+        v-for="(todo, index) in todos"
+        :key="todo.id"
+      >
+        <div class="todo-wrapper">
+          <div class="left">
+            <a href="#!" @click="toggleDone(index)"
+              ><i class="material-icons">check</i></a
+            ><span @click="toggleDone(index)" class="content">{{
+              todo.content
+            }}</span>
+          </div>
+          <div class="right">
             <a href="#!" class="secondary-content" @click="deleteTodo(index)"
               ><i class="material-icons">delete</i></a
             >
           </div>
-        </li>
-      </ul>
-    </div>
+        </div>
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -67,5 +72,19 @@ export default {
 <style lang="scss">
 .done {
   text-decoration: line-through;
+}
+
+.todo-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+}
+
+.content {
+  margin-left: 1rem;
 }
 </style>
