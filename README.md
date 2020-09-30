@@ -1,24 +1,8 @@
 # todo-vue3
 
+This todo application is built with the new composition API in Vue 3. For styling I'm using materialize css.
+
 ## Project setup
 ```
 npm install
 ```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
